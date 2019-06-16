@@ -1,0 +1,28 @@
+<h1 mat-dialog-title>Add Account</h1>
+<div mat-dialog-content>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="Account Name">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Balance</mat-label>
+      <input type="number" matInput placeholder="Balance">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>On Budget</mat-label>
+      <mat-select placeholder="On Budget" formControlName="onBudget">
+        <mat-option value=true>Yes</mat-option>
+        <mat-option value=false>No</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button on-click="cancel()">Cancel</button>
+  <button mat-button color="primary" [mat-dialog-close]="data" cdkFocusInitial>Add</button>
+</div>
