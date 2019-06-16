@@ -7,9 +7,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CustomMaterialModule } from './material'
 
+// Dialogs
+import { AddAccountDialog } from './dialogs/add-account/add-account.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AddAccountDialog
   ],
   imports: [
     BrowserModule,
@@ -18,6 +22,9 @@ import { CustomMaterialModule } from './material'
     CustomMaterialModule
   ],
   providers: [],
+  entryComponents: [
+    AddAccountDialog
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
