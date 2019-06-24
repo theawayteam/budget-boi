@@ -1,11 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CustomMaterialModule } from './material'
+import { AccountService } from './services';
 
 // Dialogs
 import { AddAccountDialog } from './dialogs/add-account/add-account.component';
@@ -19,9 +20,12 @@ import { AddAccountDialog } from './dialogs/add-account/add-account.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    CustomMaterialModule
+    CustomMaterialModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    AccountService
+  ],
   entryComponents: [
     AddAccountDialog
   ],
