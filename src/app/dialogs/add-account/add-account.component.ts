@@ -19,13 +19,14 @@ export class AddAccountDialog implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: Account) {}
   
   ngOnInit() {
+    console.log(this.data.onBudget);
     this.accountForm.controls.name.setValue(this.data.name);
     this.accountForm.controls.balance.setValue(this.data.balance);
     this.accountForm.controls.onBudget.setValue(this.data.onBudget);
 
     this.accountForm.controls.name.valueChanges.subscribe(val => this.data.name = val);
     this.accountForm.controls.balance.valueChanges.subscribe(val => this.data.balance = val);
-    this.accountForm.controls.onBudget.valueChanges.subscribe(val => this.data.onBudget = val === "false" ? false : true);
+    this.accountForm.controls.onBudget.valueChanges.subscribe(val => this.data.onBudget = val);
   }
 
   onNoClick(): void {

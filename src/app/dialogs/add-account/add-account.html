@@ -17,8 +17,8 @@
       <mat-form-field appearance="outline">
         <mat-label>On Budget</mat-label>
         <mat-select placeholder="On Budget" formControlName="onBudget">
-          <mat-option value=true>Yes</mat-option>
-          <mat-option value=false>No</mat-option>
+          <mat-option [value]="true">Yes</mat-option>
+          <mat-option [value]="false">No</mat-option>
         </mat-select>
       </mat-form-field>
     </p>
