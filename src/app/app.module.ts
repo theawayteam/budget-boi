@@ -4,7 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { NgPipesModule } from 'ngx-pipes';
 import { CustomMaterialModule } from './material'
 import { AccountService } from './services';
 
@@ -21,7 +21,8 @@ import { AddAccountDialog } from './dialogs/add-account/add-account.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     CustomMaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgPipesModule
   ],
   providers: [
     AccountService

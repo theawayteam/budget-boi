@@ -27,9 +27,5 @@ export class AppComponent {
         balance: 0
       })
     });
-
-    dialogRef.afterClosed().subscribe((account: Account) => {
-      this.$account.addAccount(account);
-    });
   }
 }

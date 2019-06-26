@@ -2,6 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { Account } from '../../model';
 import { FormGroup, FormControl } from '@angular/forms';
+import { AccountService } from '../../services';
 
 @Component({
   selector: 'add-account-dialog',
@@ -15,6 +16,7 @@ export class AddAccountDialog implements OnInit {
   });
 
   constructor(
+    private $account: AccountService,
     public dialogRef: MatDialogRef<AddAccountDialog>,
     @Inject(MAT_DIALOG_DATA) public data: Account) {}
   
@@ -34,4 +36,9 @@ export class AddAccountDialog implements OnInit {
   }
 
   cancel() { this.dialogRef.close(); }
+
+  addAccount(account: Account) {
+    this.$account.addAccount(account);
+    this.dialogRef.close();
+  }
 }
