@@ -1,9 +1,13 @@
 import { Component, Inject } from '@angular/core';
-import { Account } from './model';
+import { Account, Category } from './model';
 import { MatDialog } from '@angular/material';
 
 import { AddAccountDialog } from './dialogs/add-account/add-account.component';
-import { AccountService } from './services';
+import { AddCategoryDialog } from './dialogs/add-category/add-category.component';
+import {
+  AccountService,
+  BBCategoryService
+} from './services';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +17,8 @@ import { AccountService } from './services';
 export class AppComponent {
   constructor(
     public dialog: MatDialog,
-    private $account: AccountService
+    private $account: AccountService,
+    private $category: BBCategoryService
     ) {
       $account.init();
     }
@@ -27,5 +32,17 @@ export class AppComponent {
         balance: 0
       })
     });
+  }
+
+  addMasterCategory() {
+    const dialogRef = this.dialog.open(AddCategoryDialog, {
+      data: new Category({
+        isMaster: true
+      })
+    });
+  }
+
+  addChildCategory() {
+    //TODO
   }
 }

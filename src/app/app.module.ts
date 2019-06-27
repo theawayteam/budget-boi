@@ -6,15 +6,20 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgPipesModule } from 'ngx-pipes';
 import { CustomMaterialModule } from './material'
-import { AccountService } from './services';
+import {
+  AccountService,
+  BBCategoryService
+} from './services';
 
 // Dialogs
 import { AddAccountDialog } from './dialogs/add-account/add-account.component';
+import { AddCategoryDialog } from './dialogs/add-category/add-category.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AddAccountDialog
+    AddAccountDialog,
+    AddCategoryDialog
   ],
   imports: [
     BrowserModule,
@@ -25,10 +30,12 @@ import { AddAccountDialog } from './dialogs/add-account/add-account.component';
     NgPipesModule
   ],
   providers: [
-    AccountService
+    AccountService,
+    BBCategoryService
   ],
   entryComponents: [
-    AddAccountDialog
+    AddAccountDialog,
+    AddCategoryDialog
   ],
   bootstrap: [AppComponent]
 })

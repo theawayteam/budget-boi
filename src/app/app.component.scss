@@ -1,6 +1,7 @@
-.d-grid { display: grid; }
+.d-g { display: grid; }
 .container {
   grid-template-columns: 25% auto;
+  grid-template-rows: 25px 200px 50px auto;
 }
 
 .example-container {

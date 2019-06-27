@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>Add Category</h1>
+<div mat-dialog-content>
+  <div [formGroup]="categoryForm" cdkFocusTrap>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input cdkFocusInitial matInput placeholder="Category Name" formControlName="name">
+      </mat-form-field>
+    </p>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button on-click="cancel()">Cancel</button>
+  <button mat-button color="primary" on-click="addCategory(data)">Add</button>
+</div>

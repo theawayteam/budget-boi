@@ -2,8 +2,10 @@ export class Category {
   id: string;
   name: string;
   isMaster: boolean;
+  childrenCategories: Category[];
+  masterCategory: Category;
 
-  constructory(fields: Partial<Category>) {
+  constructor(fields: Partial<Category>) {
     Object.assign(this, fields);
   }
 }
