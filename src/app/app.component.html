@@ -7,7 +7,7 @@
         <mat-panel-description>${{$account.budgetAccounts | pluck: 'balance' | sum}}</mat-panel-description>
       </mat-expansion-panel-header>
 
-      <p *ngFor="let account of $account.budgetAccounts">{{account.name}} {{account.balance}}</p>
+      <a *ngFor="let account of $account.budgetAccounts" [routerLink]="'accounts/'+account.id">{{account.name}} {{account.balance}}</a>
     </mat-expansion-panel>
 
     <mat-expansion-panel expanded class="mb-16">
@@ -22,18 +22,6 @@
     <button mat-button color="primary" on-click="addAccount()">Add Account</button>
   </mat-sidenav>
   <mat-sidenav-content>
-    <div class="d-g container p-16">
-      <div></div>
-      <div>time picker</div>
-      <div></div>
-      <div>budget summary</div>
-      <div>
-        <button mat-button on-click="addMasterCategory()">Add Category</button>
-      </div>
-      <div>budget summary 2</div>
-      <div>categories</div>
-      <div>budgets</div>
-    </div>
-
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

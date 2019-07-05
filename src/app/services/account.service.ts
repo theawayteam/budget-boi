@@ -13,6 +13,12 @@ export class AccountService {
       this.budgetAccounts = accounts.filter(a => a.onBudget);
       this.offBudgetAccounts = accounts.filter(a => !a.onBudget);
     });
+    this.addAccount(new Account({
+      id: '1',
+      name: 'Checking',
+      balance: 12000,
+      onBudget: true
+    }));
   }
 
   addAccount(account: Account) {

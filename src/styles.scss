@@ -30,3 +30,8 @@ $budget-boi-theme: mat-light-theme($budget-boi-primary, $budget-boi-accent, $bud
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.d-g { display: grid; }
+.p-16 { padding: 16px; }
+.mb-16 { margin-bottom: 16px; }
