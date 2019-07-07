@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Account } from '../model';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { find, map } from 'rxjs/operators';
 
 @Injectable()
 export class AccountService {
@@ -27,5 +28,12 @@ export class AccountService {
 
   addAccount(account: Account) {
     this.account$.next(this.account$.value.concat(account));
+  }
+
+  getAccountById(id: string): Observable<Account> {
+    return this.account$.pipe(
+      map((accounts, index) => accounts[index]),
+      find(account => account.id === id)
+    );
   }
 }

@@ -1,20 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Transaction, Account, Payee, Category } from '../model';
 import {MatTableDataSource} from '@angular/material/table';
+import { AccountService, TransactionService } from '../services';
 
 const TRANSACTIONS: Transaction[] = [
-  new Transaction({
-    id: '1',
-    outflow: 200,
-    inflow: 0,
-    payee: new Payee({ name: 'Sunoco' }),
-    category: new Category({ name: 'Fuel' }),
-    day: '2/2/2019',
-    reconciled: false,
-    confirmed: true,
-    memo: '',
-    isTransfer: false
-  })
+  
 ]
 
 @Component({
@@ -23,9 +13,16 @@ const TRANSACTIONS: Transaction[] = [
 })
 export class AccountComponent implements OnInit{
   displayedColumns: string[] = ['day', 'payee', 'category', 'memo', 'outflow', 'inflow'];
-  dataSource = new MatTableDataSource<Transaction>(TRANSACTIONS);
+  dataSource = new MatTableDataSource<Transaction>([]);
+
+  constructor(
+    private $account: AccountService,
+    private $transaction: TransactionService
+  ) {}
 
   ngOnInit() {
-
+    this.$transaction.getTransactionsForAccount(new Account({id: '1'})).subscribe(transactions => {
+      this.dataSource.connect().next(transactions);
+    });
   }
 }

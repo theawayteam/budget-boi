@@ -8,7 +8,8 @@ import { NgPipesModule } from 'ngx-pipes';
 import { CustomMaterialModule } from './material'
 import {
   AccountService,
-  BBCategoryService
+  BBCategoryService,
+  TransactionService
 } from './services';
 
 // Dialogs
@@ -31,7 +32,8 @@ import { AddCategoryDialog } from './dialogs/add-category/add-category.component
   ],
   providers: [
     AccountService,
-    BBCategoryService
+    BBCategoryService,
+    TransactionService
   ],
   entryComponents: [
     AddAccountDialog,
