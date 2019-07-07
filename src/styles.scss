@@ -32,6 +32,8 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 
-.d-g { display: grid; }
-.p-16 { padding: 16px; }
-.mb-16 { margin-bottom: 16px; }
+.d-g { display: grid!important; }
+.p-16 { padding: 16px!important; }
+.mb-16 { margin-bottom: 16px!important; }
+
+.w-100 { width: 100%!important; }

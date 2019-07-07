@@ -1,6 +1,12 @@
 <mat-sidenav-container class="example-container">
   <mat-sidenav mode="side" opened class="p-16">
 
+    <mat-expansion-panel expanded [hideToggle]="true" class="mb-16">
+      <a routerLink="budgets">Budgets</a>
+      <a routerLink="reports">Reports</a>
+      <a routerLink="accounts">All Accounts {{$account.totalBalance}}</a>
+    </mat-expansion-panel>
+
     <mat-expansion-panel expanded class="mb-16">
       <mat-expansion-panel-header>
         <mat-panel-title>Budget Accounts</mat-panel-title>
