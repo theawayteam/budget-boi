@@ -10,7 +10,7 @@ import { switchMap } from 'rxjs/operators';
   styleUrls: ['./account.component.scss']
 })
 export class AccountComponent implements OnInit{
-  displayedColumns: string[] = ['day', 'payee', 'category', 'memo', 'outflow', 'inflow'];
+  displayedColumns: string[] = ['date', 'payee', 'category', 'memo', 'outflow', 'inflow'];
   dataSource = new MatTableDataSource<Transaction>([]);
   private account: Account;
 

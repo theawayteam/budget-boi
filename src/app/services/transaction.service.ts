@@ -13,7 +13,7 @@ export class TransactionService {
         inflow: 0,
         payee: new Payee({ name: 'Sunoco' }),
         category: new Category({ name: 'Fuel' }),
-        day: '2/2/2019',
+        date: '2/2/2019',
         reconciled: false,
         confirmed: true,
         memo: '',

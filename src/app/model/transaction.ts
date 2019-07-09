@@ -7,7 +7,7 @@ export class Transaction {
   inflow: number;
   payee: Payee;
   category: Category;
-  day: string;
+  date: string;
   reconciled: boolean;
   confirmed: boolean;
   memo: string;

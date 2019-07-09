@@ -13,7 +13,7 @@
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
 $budget-boi-primary: mat-palette($mat-orange);
-$budget-boi-accent: mat-palette($mat-blue-grey, A200, A100, A400);
+$budget-boi-accent: mat-palette($mat-blue, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
 $budget-boi-warn: mat-palette($mat-red);
@@ -31,6 +31,9 @@ $budget-boi-theme: mat-light-theme($budget-boi-primary, $budget-boi-accent, $bud
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+mat-sidenav {
+  background-color: map-get($mat-blue, 500)!important;
+}
 
 .d-g { display: grid!important; }
 .p-16 { padding: 16px!important; }
