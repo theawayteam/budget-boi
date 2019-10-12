@@ -2,24 +2,40 @@
   <mat-sidenav mode="side" opened class="p-16">
 
     <mat-expansion-panel expanded [hideToggle]="true" class="mb-16">
-      <a routerLink="budgets">Budgets</a>
-      <a routerLink="reports">Reports</a>
-      <a routerLink="accounts">All Accounts {{$account.totalBalance}}</a>
+      <mat-list>
+        <mat-list-item routerLink="budgets" routerLinkActive="active" class="c-pointer">
+          <mat-icon mat-list-icon>loyalty</mat-icon>
+          <h4 mat-line>Budgets</h4>
+        </mat-list-item>
+      </mat-list>
+      <!-- <a routerLink="reports">Reports</a>
+      <a routerLink="accounts">All Accounts {{$account.totalBalance}}</a> -->
     </mat-expansion-panel>
 
     <mat-expansion-panel expanded class="mb-16">
       <mat-expansion-panel-header>
         <mat-panel-title>Budget Accounts</mat-panel-title>
-        <mat-panel-description>${{$account.budgetAccounts | pluck: 'balance' | sum}}</mat-panel-description>
+        <mat-panel-description>{{$account.budgetAccounts | pluck: 'balance' | sum | currency}}</mat-panel-description>
       </mat-expansion-panel-header>
 
-      <a *ngFor="let account of $account.budgetAccounts" [routerLink]="'accounts/'+account.id">{{account.name}} {{account.balance}}</a>
+      <mat-list>
+        <mat-list-item
+          class="c-pointer"
+          *ngFor="let account of $account.budgetAccounts"
+          [routerLink]="'accounts/'+account.id"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}"
+        >
+          <h4 mat-line>{{account.name}}</h4>
+          <p mat-line>{{account.balance | currency}}</p>
+        </mat-list-item>
+      </mat-list>
     </mat-expansion-panel>
 
     <mat-expansion-panel expanded class="mb-16">
       <mat-expansion-panel-header>
         <mat-panel-title>Off Budget Accounts</mat-panel-title>
-        <mat-panel-description>${{$account.offBudgetAccounts | pluck: 'balance' | sum}}</mat-panel-description>
+        <mat-panel-description>{{$account.offBudgetAccounts | pluck: 'balance' | sum | currency}}</mat-panel-description>
       </mat-expansion-panel-header>
 
       <p *ngFor="let account of $account.offBudgetAccounts">{{account.name}} {{account.balance}}</p>

@@ -40,3 +40,12 @@ mat-sidenav {
 .mb-16 { margin-bottom: 16px!important; }
 
 .w-100 { width: 100%!important; }
+
+.c-pointer { cursor:  pointer; }
+
+mat-list-item {
+  &.active {
+    background-color: #ccc;
+    color: white;
+  }
+}
