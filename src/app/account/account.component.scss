@@ -1,7 +1,7 @@
 @import '~@angular/material/theming';
 
 :host {
-  height: 100vh;
+  height: calc(100vh - 32px);
   overflow: auto;
   padding: 16px;
   display: block;
@@ -9,11 +9,10 @@
 
 .table-container {
   overflow: auto;
-  height: calc(100vh - 104px);
+  height: calc(100vh - 112px);
   margin-bottom: 16px;
 }
 
-.footer {
-  height: 56px;
-  background-color: map-get($mat-blue-grey, 500);
+.spacer {
+  flex: 1 1 auto;
 }

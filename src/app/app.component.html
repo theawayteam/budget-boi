@@ -25,7 +25,7 @@
       <p *ngFor="let account of $account.offBudgetAccounts">{{account.name}} {{account.balance}}</p>
     </mat-expansion-panel>
 
-    <button mat-button color="primary" on-click="addAccount()">Add Account</button>
+    <button mat-stroked-button color="primary" on-click="addAccount()">Add Account</button>
   </mat-sidenav>
   <mat-sidenav-content>
     <router-outlet></router-outlet>
