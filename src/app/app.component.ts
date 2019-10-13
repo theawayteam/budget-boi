@@ -17,7 +17,7 @@ import {
 export class AppComponent {
   constructor(
     public dialog: MatDialog,
-    private $account: AccountService,
+    public $account: AccountService,
     private $category: BBCategoryService
     ) {
       $account.init();
