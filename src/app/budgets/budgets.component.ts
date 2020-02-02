@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { BudgetInstance } from '../model';
+import { BudgetInstance, Category } from '../model';
 import { BudgetService } from '../services';
 import { Observable } from 'rxjs';
+import { MatDialog } from '@angular/material';
+import { AddCategoryDialog } from '../dialogs/add-category/add-category.component';
+
 
 @Component({
   templateUrl: './budgets.component.html',
@@ -12,10 +15,28 @@ export class BudgetsComponent implements OnInit {
   dataSource: Observable<BudgetInstance[]>;
 
   constructor(
-    private $budget: BudgetService
+    private $budget: BudgetService,
+    public dialog: MatDialog
   ) {}
 
   ngOnInit() {
     this.dataSource = this.$budget.budgetsForMonth(323);
+  }
+
+  addMasterCategory() {
+    const dialogRef = this.dialog.open(AddCategoryDialog, {
+      data: new Category({
+        isMaster: true
+      })
+    });
+  }
+
+  addChildCategory(masterCategory: Category) {
+    const dialogRef = this.dialog.open(AddCategoryDialog, {
+      data: new Category({
+        isMaster: false,
+        masterCategoryId: masterCategory.id
+      })
+    });
   }
 }

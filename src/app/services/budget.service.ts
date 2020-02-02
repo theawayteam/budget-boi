@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Budget, Category, BudgetInstance } from '../model';
 import { of, Observable, forkJoin } from 'rxjs';
-import { filter, flatMap, zip, map } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 
 @Injectable()
 export class BudgetService {  
@@ -49,31 +49,31 @@ export class BudgetService {
       new Category({
         id: 'house-child-mortgage',
         name: 'Mortgage',
-        masterCategory: 'house-master'
+        masterCategoryId: 'house-master'
       }),
       new Category({
         id: 'house-child-needs',
-        masterCategory: 'house-mortgage',
+        masterCategoryId: 'house-mortgage',
         name: 'Needs'
       }),
       new Category({
         id: 'house-child-6-month',
-        masterCategory: 'house-master',
+        masterCategoryId: 'house-master',
         name: '6 month payments'
       }),
       new Category({
         id: 'house-child-emergency',
-        masterCategory: 'house-master',
+        masterCategoryId: 'house-master',
         name: 'Emergency Fund'
       }),
       new Category({
         id: 'house-child-services',
-        masterCategory: 'house-master',
+        masterCategoryId: 'house-master',
         name: 'Services'
       }),
       new Category({
         id: 'house-child-hoa',
-        masterCategory: 'house-master',
+        masterCategoryId: 'house-master',
         name: 'HOA'
       }),
     ]);

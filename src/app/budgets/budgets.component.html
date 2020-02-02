@@ -21,10 +21,13 @@
 
     <!-- Categories Column -->
     <ng-container matColumnDef="Categories">
-      <th mat-header-cell *matHeaderCellDef> Categories </th>
+      <th mat-header-cell *matHeaderCellDef> Categories
+        <button mat-button color="accent" (click)="addMasterCategory()"><mat-icon>add</mat-icon></button>
+      </th>
       <td mat-cell *matCellDef="let element">
         <span *ngIf="element.isMaster">
           <strong>{{element.category.name}}</strong>
+          <button mat-button color="accent" (click)="addChildCategory(element.category)"><mat-icon>add</mat-icon></button>
         </span>
         <span *ngIf="!element.isMaster">
           {{element.category.name}}

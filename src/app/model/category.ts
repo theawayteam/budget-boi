@@ -3,7 +3,7 @@ export class Category {
   name: string;
   isMaster: boolean;
   childrenCategories: string[];
-  masterCategory: string;
+  masterCategoryId: string;
 
   constructor(fields: Partial<Category>) {
     Object.assign(this, fields);
