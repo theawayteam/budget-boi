@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { routing } from './budgets.routing';
 import { BudgetsComponent } from './budgets.component';
 import { CustomMaterialModule } from '../material';
@@ -10,6 +11,7 @@ import { BudgetService } from '../services';
   ],
   imports: [
     CustomMaterialModule,
+    CommonModule,
     routing
   ],
   providers: [
