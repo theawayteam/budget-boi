@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Category } from '../../model';
 import { FormGroup, FormControl } from '@angular/forms';
 import { BBCategoryService } from '../../services';

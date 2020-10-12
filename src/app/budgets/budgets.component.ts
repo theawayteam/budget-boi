@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BudgetInstance, Category } from '../model';
 import { BudgetService } from '../services';
 import { Observable } from 'rxjs';
-import { MatDialog } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
 import { AddCategoryDialog } from '../dialogs/add-category/add-category.component';
 
 

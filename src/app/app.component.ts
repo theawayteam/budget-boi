@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Account } from './model';
-import { MatDialog } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
 
 import { AddAccountDialog } from './dialogs/add-account/add-account.component';
 import {
