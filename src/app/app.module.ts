@@ -11,6 +11,8 @@ import {
   BBCategoryService,
   TransactionService
 } from './services';
+import { NgxsModule } from '@ngxs/store';
+import { CategoryState } from './state';
 
 // Dialogs
 import { AddAccountDialog } from './dialogs/add-account/add-account.component';
@@ -28,7 +30,10 @@ import { AddCategoryDialog } from './dialogs/add-category/add-category.component
     BrowserAnimationsModule,
     CustomMaterialModule,
     ReactiveFormsModule,
-    NgPipesModule
+    NgPipesModule,
+    NgxsModule.forRoot([CategoryState], {
+      developmentMode: true
+    })
   ],
   providers: [
     AccountService,
